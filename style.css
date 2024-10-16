@@ -1,64 +1,100 @@
-* {
+/* General Styling */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+    background-color: #1f1f1f;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #81ecec, #6c5ce7);
     font-family: 'Arial', sans-serif;
 }
 
 .calculator {
-    background-color: #2d3436;
+    background-color: #333;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     width: 320px;
-    text-align: center;
 }
 
 #display {
-    background-color: #dfe6e9;
-    border: none;
-    padding: 20px;
-    font-size: 24px;
-    border-radius: 10px;
     width: 100%;
-    margin-bottom: 10px;
+    height: 60px;
+    background-color: #222;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 24px;
     text-align: right;
-    color: #2d3436;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    gap: 10px;
 }
 
 button {
-    background-color: #00b894;
+    background-color: #444;
     border: none;
-    padding: 20px;
-    font-size: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 20px;
+    padding: 20px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-    background-color: #0984e3;
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #ff7f50;
+    transform: scale(1);
 }
 
 .zero-btn {
     grid-column: span 2;
 }
 
-button:active {
-    transform: scale(0.98);
+button:nth-child(4n) {
+    background-color: #ff4757;
+}
+
+button:nth-child(4n):hover {
+    background-color: #ff6b81;
+}
+
+button:nth-child(4n):active {
+    background-color: #ff6348;
+}
+
+button:nth-child(3n):not(:nth-child(4n)) {
+    background-color: #576574;
+}
+
+button:nth-child(3n):hover:not(:nth-child(4n)) {
+    background-color: #778ca3;
+}
+
+button:nth-child(2n):not(:nth-child(4n)) {
+    background-color: #1e90ff;
+}
+
+button:nth-child(2n):hover:not(:nth-child(4n)) {
+    background-color: #3742fa;
+}
+
+button:nth-child(1n):not(:nth-child(4n)) {
+    background-color: #2ed573;
+}
+
+button:nth-child(1n):hover:not(:nth-child(4n)) {
+    background-color: #7bed9f;
 }
